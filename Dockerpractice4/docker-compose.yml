@@ -70,4 +70,4 @@ services:                #アプリケーションを動かせるための記述
       - PMA_USER=ayane_user
       - PMA_PASSWORD=password
     ports:
-      - 8080:80
+      - "8080:80"
