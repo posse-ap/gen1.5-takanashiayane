@@ -1,6 +1,12 @@
 
 <?php 
 
+phpinfo();
+require('./dbconnect.php');
+
+// $id=$_GET['id'];
+// print_r($id);
+// $stmt="SELECT * FROM tokyo_questions"
 ?>
 
 
