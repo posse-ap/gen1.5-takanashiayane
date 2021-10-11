@@ -1,8 +1,21 @@
-
-<?php 
-
-phpinfo();
+<?php
 require('./dbconnect.php');
+$id = $_GET['id'];
+if ($id == 1) {
+    $stmt= $db ->query("SELECT * FROM tokyo_questions");
+    $tokyo_questions=$stmt->fetchAll();
+    // $questions_id = $tokyo_questions[0]['id'];
+    print_r($questions_id);
+    echo "東京の難読地名";
+}else if($id==2){
+    "SELECT * FROM hiroshima_questions";
+    echo "広島の難読地名";
+}else{
+    $stmt= $db ->query("SELECT * FROM tokyo_questions");
+    $tokyo_questions=$stmt->fetchAll();
+    echo "東京の難読地名";
+}
+
 
 // $id=$_GET['id'];
 // print_r($id);
@@ -22,12 +35,42 @@ require('./dbconnect.php');
 </head>
 
 <body>
+<?php foreach($tokyo_questions as $tokyo_question){
+    $question_id=$tokyo_question['id']?>
+    <div class="contenainer">
+        <div> 
+            <h2 class="monndai">
+            
+            <?php echo  $question_id;?>.この地名はなんて読む？
+            </h2>
+        </div>
+        <div class="img">
+            <img src='../img/<?php echo  $question_id;?>.png' alt="<?php echo $question_id;?>問目の写真">
+        </div>
+        
+        <ul>
+            <li id="miss<?php echo $question_id;?>_1" class="list" onclick="check(<?php echo ($question_id+1);?>,1,1)"><?php echo ($tokyo_question['choice1']);?></li>
+            <li id="miss<?php echo $question_id;?>_2" class="list" onclick="check(<?php echo ($question_id+1);?>,2,1)"><?php echo ($tokyo_question['choice2']);?></li>
+            <li id="miss<?php echo $question_id;?>_3" class="list" onclick="check(<?php echo ($question_id+1);?>,3,1)"><?php echo ($tokyo_question['choice3']);?></li>
+        </ul>
+        <div id="answer<?php echo ($question_id+1);?>" class="answer">
+            <div class="correct_show">正解！
+            </div>
+            <p class="answer_show">正解は「<?php echo $tokyo_question['choice1'];?>」です!</p>
+        </div>
+        <div id="wrong_answer<?php echo ($question_id+1);?>" class="wrong_answer">
+            <div class="wrong_show">不正解！</div>
+            <p class="answer_show">正解は「<?php echo $tokyo_question['choice1'];?>」です!</p>
+        </div>
+    </div>
+    </div>
+    <?php };?>
     <!-- <div class = "contenainer">
         <div>
             <h3 class="monndai">1.この地名はなんて読む？</h3>  -->
-            <!-- TODO:名前直す h2にする -->
-        
-<!--             
+    <!-- TODO:名前直す h2にする -->
+
+    <!--             
             <div class="img">
                 <img src="https://d1khcm40x1j0f.cloudfront.net/quiz/34d20397a2a506fe2c1ee636dc011a07.png" alt='高輪の写真'>
             </div>

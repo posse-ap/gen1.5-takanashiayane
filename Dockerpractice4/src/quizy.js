@@ -2,45 +2,45 @@
 // const miss1_2 = document.getElementById('miss1_2') ;
 // const seikai1_1 = document.getElementById('seikai1_1') ;
 
-const choice = [
-    ['たかわ', 'こうわ', 'たかなわ'],
-    ['かめど', 'かめと', 'かめいど'],
-    ['おかとまち', 'かゆまち', 'こうじまち'],
-    ['おかどもん', 'ごせいもん', 'おなりもん'],
-    ['たたりき', 'たたら', 'とどろき'],
-    ['せきこうい', 'いじい', 'しゃくじい'],
-    ['ざっしょく', 'ざっしき', 'ぞうしき'],
-    ['ごしろちょう', 'みとちょう', 'おかちまち'],
-    ['ろっこつ', 'しこね', 'ししぼね'],
-    ['こしゃく', 'こばく', 'こぐれ'],
-];
+// const choice = [
+//     ['たかわ', 'こうわ', 'たかなわ'],
+//     ['かめど', 'かめと', 'かめいど'],
+//     ['おかとまち', 'かゆまち', 'こうじまち'],
+//     ['おかどもん', 'ごせいもん', 'おなりもん'],
+//     ['たたりき', 'たたら', 'とどろき'],
+//     ['せきこうい', 'いじい', 'しゃくじい'],
+//     ['ざっしょく', 'ざっしき', 'ぞうしき'],
+//     ['ごしろちょう', 'みとちょう', 'おかちまち'],
+//     ['ろっこつ', 'しこね', 'ししぼね'],
+//     ['こしゃく', 'こばく', 'こぐれ'],
+// ];
 
-const correct_choice = ['たかなわ', 'かめいど', 'こうじまち', 'おなりもん', 'とどろき', 'しゃくじい', 'ぞうしき', 'おかちまち', 'ししぼね', 'こぐれ'];
+// const correct_choice = ['たかなわ', 'かめいど', 'こうじまち', 'おなりもん', 'とどろき', 'しゃくじい', 'ぞうしき', 'おかちまち', 'ししぼね', 'こぐれ'];
 
-const newArray = [
-    [], [], [], [], [], [], [], [], [], []
-];
+// const newArray = [
+//     [], [], [], [], [], [], [], [], [], []
+// ];
 
-console.log(choice.length);
+// console.log(choice.length);
 ///////////////////////////////シャッフル処理//////////////////////////////////////
 // window.onload = 
-function shuffle() {
-    for (var i = 0; i < 10; i++) {
-        for (var k = choice[i].length; k > 0; k--) {
-            var r = Math.floor(Math.random() * k);
-            newArray[i].push(choice[i][r]);
-            choice[i].splice(r, 1);
+// function shuffle() {
+//     for (var i = 0; i < 10; i++) {
+//         for (var k = choice[i].length; k > 0; k--) {
+//             var r = Math.floor(Math.random() * k);
+//             newArray[i].push(choice[i][r]);
+//             choice[i].splice(r, 1);
             // console.log(newArray);
             // console.log(choice[i]);
 
             
 
-        }
+//         }
     
-    }
-}
-choice.map(shuffle);
-console.log(newArray);
+//     }
+// }
+// choice.map(shuffle);
+// console.log(newArray);
 
 //     for(let i = 0;i<10;i++){
 
@@ -79,45 +79,45 @@ console.log(newArray);
 // }
 
 
-for (let i = 0; i < 10; i++) {
+// for (let i = 0; i < 10; i++) {
 
  /////////////////////////////////シャッフル後正しい答えの位置////////////////////////////////////
-    var result = newArray[i].indexOf(correct_choice[i]);
+    // var result = newArray[i].indexOf(correct_choice[i]);
 
 ///////////////////////////////html//////////////////////////////////////
-    let h =
-        '<div class = "contenainer">'
-        + '<div>'
-        + `<h2 class="monndai">${i + 1}.この地名はなんて読む？</h2> `
-        + '</div>'
+//     let h =
+//         '<div class = "contenainer">'
+//         + '<div>'
+//         + `<h2 class="monndai">${i + 1}.この地名はなんて読む？</h2> `
+//         + '</div>'
 
 
-        + '<div class="img">'
-        + `<img src = '../img/${i + 1}.png' alt="${i + 1}問目の写真">`
-        + '</div>'
+//         + '<div class="img">'
+//         + `<img src = '../img/${i + 1}.png' alt="${i + 1}問目の写真">`
+//         + '</div>'
 
-        + '<ul>'
+//         + '<ul>'
         
-        + `<li id ="miss${i + 1}_1" class = "list" onclick="check(${i + 1},1,${result+1})">${newArray[i][0]}</li>`
-        + `<li id ="miss${i + 1}_2" class = "list" onclick="check(${i + 1},2,${result+1})">${newArray[i][1]}</li>`
-        + `<li id ="miss${i + 1}_3" class = "list" onclick="check(${i + 1},3,${result+1})">${newArray[i][2]}</li>`
+//         + `<li id ="miss${i + 1}_1" class = "list" onclick="check(${i + 1},1,${result+1})">${newArray[i][0]}</li>`
+//         + `<li id ="miss${i + 1}_2" class = "list" onclick="check(${i + 1},2,${result+1})">${newArray[i][1]}</li>`
+//         + `<li id ="miss${i + 1}_3" class = "list" onclick="check(${i + 1},3,${result+1})">${newArray[i][2]}</li>`
 
-        + '</ul>'
+//         + '</ul>'
 
-        + `<div id ="answer${i + 1}" class = "answer">`
-        + ' <div class = "correct_show">正解！</div>'
-        + ` <p  class = "answer_show">正解は「${correct_choice[i]}」です!</p>`
-        + '</div>'
+//         + `<div id ="answer${i + 1}" class = "answer">`
+//         + ' <div class = "correct_show">正解！</div>'
+//         + ` <p  class = "answer_show">正解は「${correct_choice[i]}」です!</p>`
+//         + '</div>'
 
-        + `<div id ="wrong_answer${i + 1}" class = "wrong_answer">`
-        + ' <div class = "wrong_show">不正解！</div>'
-        + ` <p  class = "answer_show">正解は「${correct_choice[i]}」です!</p>`
-        + '</div>'
-        + '</div>'
-        + '</div>';
+//         + `<div id ="wrong_answer${i + 1}" class = "wrong_answer">`
+//         + ' <div class = "wrong_show">不正解！</div>'
+//         + ` <p  class = "answer_show">正解は「${correct_choice[i]}」です!</p>`
+//         + '</div>'
+//         + '</div>'
+//         + '</div>';
 
-    document.write(h);
-}
+//     document.write(h);
+// }
 
 ///////////////////////////////クリック処理//////////////////////////////////////
 function check(question_number, number, place) {
