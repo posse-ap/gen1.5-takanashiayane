@@ -120,32 +120,48 @@
 // }
 
 ///////////////////////////////クリック処理//////////////////////////////////////
-function check(question_number, number, place) {
-    let first = document.getElementById('miss' + question_number + '_1'); //何問目
-    let second = document.getElementById('miss' + question_number + '_2');
-    let third = document.getElementById('miss' + question_number + '_3');
-    let clicked = document.getElementById('miss' + question_number + '_' + number);  //何個目
-    let correct_choice2 = document.getElementById('miss' + question_number + '_' + place);
-    correct_choice2.classList.add("seikai");
+// function check(question_number, number, place) {
+//     let first = document.getElementById('miss' + question_number + '_1'); //何問目
+//     let second = document.getElementById('miss' + question_number + '_2');
+//     let third = document.getElementById('miss' + question_number + '_3');
+//     let clicked = document.getElementById('miss' + question_number + '_' + number);  //何個目
+//     let correct_choice2 = document.getElementById('miss' + question_number + '_' + place);
+//     correct_choice2.classList.add("seikai");
 
-    if (number == place) {
-        let answer = document.getElementById('answer' + question_number);
+//     if (number == place) {
+//         let answer = document.getElementById('answer' + question_number);
+//         answer.style.display = "block";
+//     }
+//     else {
+//         clicked.classList.add("miss");
+//         let wrong_answer = document.getElementById('wrong_answer' + question_number);
+//         wrong_answer.style.display = "block";
+//     };
+//     // correct_choice2.classList.add("cantclick");
+//     first.classList.add("cantclick");
+//     second.classList.add("cantclick");
+//     third.classList.add("cantclick");
+
+
+// }
+//クリック処理 question_number：問題番号 number：選んだ選択肢
+function check(question_number,number){
+    let correct_choice=document.getElementById("choice"+question_number+"_1");
+    let miss_choice1=document.getElementById("choice"+question_number+"_2");
+    let miss_choice2=document.getElementById("choice"+question_number+"_3");
+    if(number == 1){
+        correct_choice.classList.add("seikai");
+        let
         answer.style.display = "block";
     }
-    else {
-        clicked.classList.add("miss");
-        let wrong_answer = document.getElementById('wrong_answer' + question_number);
+    else{
+        miss_choice1.classList.add("miss");
         wrong_answer.style.display = "block";
     };
-    // correct_choice2.classList.add("cantclick");
-    first.classList.add("cantclick");
-    second.classList.add("cantclick");
-    third.classList.add("cantclick");
-
-
+    correct_choice.classList.add("cantclick");
+    miss_choice1.classList.add("cantclick");
+    miss_choice2.classList.add("cantclick");
 }
-
-
 
 
 

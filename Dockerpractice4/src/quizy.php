@@ -47,11 +47,11 @@ if ($id == 1) {
         <div class="img">
             <img src='../img/<?php echo  $question_id;?>.png' alt="<?php echo $question_id;?>問目の写真">
         </div>
-        
+
         <ul>
-            <li id="miss<?php echo $question_id;?>_1" class="list" onclick="check(<?php echo ($question_id+1);?>,1,1)"><?php echo ($tokyo_question['choice1']);?></li>
-            <li id="miss<?php echo $question_id;?>_2" class="list" onclick="check(<?php echo ($question_id+1);?>,2,1)"><?php echo ($tokyo_question['choice2']);?></li>
-            <li id="miss<?php echo $question_id;?>_3" class="list" onclick="check(<?php echo ($question_id+1);?>,3,1)"><?php echo ($tokyo_question['choice3']);?></li>
+            <li id="choice<?php echo $question_id;?>_1" class="list" onclick="check(<?php echo $question_id;?>,1)"><?php echo ($tokyo_question['choice1']);?></li>
+            <li id="choice<?php echo $question_id;?>_2" class="list" onclick="check(<?php echo $question_id;?>,2)"><?php echo ($tokyo_question['choice2']);?></li>
+            <li id="choice<?php echo $question_id;?>_3" class="list" onclick="check(<?php echo $question_id;?>,3)"><?php echo ($tokyo_question['choice3']);?></li>
         </ul>
         <div id="answer<?php echo ($question_id+1);?>" class="answer">
             <div class="correct_show">正解！
