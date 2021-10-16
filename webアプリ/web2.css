@@ -1,0 +1,126 @@
+/* PC版トップページ */
+/* ヘッダー */
+
+header{
+    /* box-sizing: border-box; */
+    height: 64px;
+    /* width:100%; */
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.header_img{
+    margin:2px;
+}
+.week{
+    color:silver;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.button{
+    display: block;
+    color:white;
+    border-radius: 30px;
+    background:linear-gradient(-90deg,#0AD2FF,#0572C2);
+    border:none;
+    font-size: 0.9em;
+    padding-right: 45px;
+    padding-left: 45px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: auto; 
+    margin:10px 20px 10px auto;
+    float:right;
+    text-align: right;
+    box-sizing: border-box;
+}
+.header_left{
+    display:flex;
+}
+
+
+/* 中身 */
+main{
+    background-color: whitesmoke;
+}
+.container{
+    display:flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+/* 左 */
+.left{
+    width:50%;
+    box-sizing: border-box;
+    margin: 20px 20px 40px 20px;
+    box-sizing: border-box;
+}
+.boxes{
+    display:flex;
+    justify-content: space-between;
+    margin:  0 0 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+.box{
+    background-color: white;
+    width: 30%;
+    text-align: center;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding:0 20px 0 20px;
+}
+
+.period{
+    color: dodgerblue;
+    font-weight: bold;
+    line-height: 60%;
+    margin:15px 0 0 0;
+}
+.number{
+    justify-content:center;
+    font-weight: bold;
+    font-size: large;
+    line-height: 40px;
+    
+}
+.hour{
+    line-height: 20%;
+    color: silver;
+    font-size: large;
+    line-height: 10px;
+    margin:0 0 15px 0;
+}
+.pin_graf{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+/* 右 */
+.right{
+    display:flex;
+    width:50%;
+    box-sizing: border-box;
+    margin:20px 50px  40px 0;
+    justify-content: space-between;
+}
+.right_box{
+    background-color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    padding:10px;
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+.contents_name{
+    font-size: 15px;
+    font-weight: bolder;
+    margin: 5px 10px;
+}
+#myDoughnutChart{
+    box-sizing: border-box;
+}
+/* モーダル */
