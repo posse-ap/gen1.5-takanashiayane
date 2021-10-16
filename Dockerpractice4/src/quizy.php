@@ -59,7 +59,7 @@ if ($id == 1) {
             <p class="answer_show">正解は「<?php echo $tokyo_question['choice1'];?>」です!</p>
         </div>
         <div id="wrong_answer<?php echo ($question_id+1);?>" class="wrong_answer">
-            <div class="wrong_show">不正解！</div>
+            <div class="wrong_show">不正解!！</div>
             <p class="answer_show">正解は「<?php echo $tokyo_question['choice1'];?>」です!</p>
         </div>
     </div>
