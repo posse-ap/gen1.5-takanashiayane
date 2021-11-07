@@ -158,3 +158,39 @@ var myDoughnutChart = new Chart(ctx, {
         }
     }
 });
+
+function modal() {
+    var modal = document.getElementById('modal');
+    if (!modal) return;
+
+    var blackBg = document.getElementById('modal_black_bg');
+    var closeBtn = document.getElementById('modal_close_btn');
+    var showBtn = document.getElementById('modal_open_btn');
+
+    closePopUp(blackBg);
+    closePopUp(closeBtn);
+    closePopUp(showBtn);
+    function closePopUp(elem) {
+        if (!elem) return;
+        elem.addEventListener('click', function () {
+            modal.classList.toggle('is-show');
+
+        });
+
+    }
+}
+modal(); 
+
+
+// function modal_change(){
+//     let modal1 =document.getElementById("modal1");
+//     let modal2 =document.getElementById("modal2");
+//     modal1.style.display="none";
+//     modal2.style.display="block";
+// }
+modal_check_btn.onclick =function(){
+    let modal1 =document.getElementById("modal1");
+    let modal2 =document.getElementById("modal2");
+    modal1.style.display="none";
+    modal2.style.display="block";
+}
