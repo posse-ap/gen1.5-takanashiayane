@@ -1,13 +1,22 @@
+'use strict'
+
+
 // 棒グラフ
+
+
+
+
+
+
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '1日', '2日', '3日', '4日', '5日', '6日', '7日', '1日', '2日', '3日', '4日', '5日', '6日', '7日'],
+        labels: ['1日', '2日', '3日', '4日', '5日'],
         datasets: [
             {
-                label: 'C店 来客数',
-                data: [33, 45, 62, 55, 31, 45, 38, 100],
+                label: 'C店 来客数', 
+                data: day_hour_sum,
                 backgroundColor: "rgba(130,201,169,0.5)"
             }
         ]

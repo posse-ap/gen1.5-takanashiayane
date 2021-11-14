@@ -2,15 +2,27 @@
 // include('./dbconnect.php');
 include($_SERVER['DOCUMENT_ROOT'] . "/dbconnect.php");
 
-$stmt= $db ->query("SELECT sum(hour) FROM logs WHERE date=CURDATE()");
-$today_hour=$stmt->fetchAll();
-$stmt= $db ->query("SELECT sum(hour) FROM logs WHERE DATE_FORMAT(date, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m')");
-$month_hour=$stmt->fetchAll();
-$stmt= $db ->query("SELECT sum(hour) FROM logs");
-$all_hour=$stmt->fetchAll();
-$stmt= $db ->query("SELECT hour FROM logs GROUP BY CURDATE()");
-$all_hour=$stmt->fetchAll();
-// json_encode($today_hour);
+$stmt = $db->query("SELECT sum(hour) FROM logs WHERE date=CURDATE()");
+$today_hour = $stmt->fetchAll();
+$stmt = $db->query("SELECT sum(hour) FROM logs WHERE DATE_FORMAT(date, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m')");
+$month_hour = $stmt->fetchAll();
+$stmt = $db->query("SELECT sum(hour) FROM logs");
+$all_hour = $stmt->fetchAll();
+// $stmt= $db ->query("SELECT sum(hour) FROM logs GROUP BY CURDATE()");
+// $day_hour=$stmt->fetchAll();
+$stmt = $db->query("SELECT DATE_FORMAT(date, '%Y%m%d') AS time,  SUM(hour) AS sum FROM logs WHERE DATE_FORMAT(date, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m') GROUP BY DATE_FORMAT(date, '%Y%m%d')");
+$day_hour = $stmt->fetchAll();
+// foreach($day_hour as $day_hour){
+//     $day_hour_sum[]=$day_hour["sum"];
+// };
+$day_hour_sum =array_column( $day_hour, "sum" ) ;
+
+
+$day=date('t');
+
+// $month_day[]
+// print_r($day_hour_sum);
+// print_r($day_hour_sum);
 
 ?>
 <!DOCTYPE html>
@@ -46,18 +58,27 @@ $all_hour=$stmt->fetchAll();
                 <div class="boxes">
                     <div class="box">
                         <p class="period">Today</p>
-                        <p class="number"><?php if($today_hour[0][0]==null){echo '0';}else{echo($today_hour[0][0]); }?></p>
+                        <p class="number"><?php echo $today_hour[0][0]??0;?></p>
                         <p class="hour">hour</p>
 
                     </div>
                     <div class="box">
                         <p class="period">Month</p>
-                        <p class="number"><?php if($month_hour[0][0]==null){echo '0';}else{echo($month_hour[0][0]); }?></p></p>
+                        <p class="number"><?php if ($month_hour[0][0] == null) {
+                                                echo '0';
+                                            } else {
+                                                echo ($month_hour[0][0]);
+                                            } ?></p>
+                        </p>
                         <p class="hour">hour</p>
                     </div>
                     <div class="box">
                         <p class="period"> Total</p>
-                        <p class="number"><?php if($all_hour[0][0]==null){echo '0';}else{echo($all_hour[0][0]); }?></p>
+                        <p class="number"><?php if ($all_hour[0][0] == null) {
+                                                echo '0';
+                                            } else {
+                                                echo ($all_hour[0][0]);
+                                            } ?></p>
                         <p class="hour">hour</p>
                     </div>
                 </div>
@@ -85,7 +106,7 @@ $all_hour=$stmt->fetchAll();
         <div class="popup" id="modal">
             <div class="popup-inner">
                 <div class="close-btn" id="modal_close_btn"><i class="fas fa-times"></i></div>
-                <div class="modal1" id ="modal1">
+                <div class="modal1" id="modal1">
                     <div class="modal_wrap">
                         <div class="modal_left">
                             <div class="modal_left_wrap">
@@ -149,11 +170,11 @@ $all_hour=$stmt->fetchAll();
         </div>
     </main>
     <footer>
-
     </footer>
     <script>
         // const hoge = JSON.parse('<?php echo $today_hour ?>');
-        const hoge = JSON.parse('<?php echo json_encode($imgList) ?>');
+        const day_hour_sum = JSON.parse('<?php echo json_encode($day_hour_sum) ?>');
+        const day = date('t');
     </script>
     <script src="web2.js"></script>
     <!-- <script src="chart.php" type="text/javascript"></script> -->

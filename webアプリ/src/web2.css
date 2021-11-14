@@ -215,7 +215,7 @@ main {
 
 .modal_right {
     width: 50%;
-    background-color:#fff;
+    background-color: #fff;
     margin: 0 0 0 15px;
 }
 
@@ -254,7 +254,7 @@ main {
     box-sizing: border-box;
     width: 90%;
     border-radius: 8px;
-    padding:20px 10px;
+    padding: 20px 10px;
 }
 
 .checkbox {
@@ -284,9 +284,7 @@ main {
     color: #0467ad;
 }
 
-
-
-.hour_input_area{
+.hour_input_area {
     justify-content: center;
     background-color: whitesmoke;
     border: none;
@@ -295,23 +293,25 @@ main {
     box-sizing: border-box;
     width: 100%;
     border-radius: 8px;
-    padding:20px 10px;
+    padding: 20px 10px;
 }
+
 textarea {
-    margin-top:10px;
+    margin-top: 10px;
     resize: none;
-    width:100%;
-    height:120px;
+    width: 100%;
+    height: 120px;
     border: none;
     background-color: whitesmoke;
     border-radius: 8px;
 }
+
 .twitterCheckbox {
     box-sizing: border-box;
     display: none;
 }
 
-.twitterCheckbox_fontas{
+.twitterCheckbox_fontas {
     position: relative;
     vertical-align: middle;
     font-size: 25px;
@@ -332,7 +332,8 @@ textarea {
 .twitterCheckbox:checked+.twitterCheckbox_fontas:before {
     color: #0467ad;
 }
-.modal_check_btn{
+
+.modal_check_btn {
     display: block;
     color: white;
     border-radius: 30px;
@@ -348,6 +349,7 @@ textarea {
     text-align: center;
     margin: 0 auto;
 }
-.modal2{
-    display:none;
+
+.modal2 {
+    display: none;
 }
