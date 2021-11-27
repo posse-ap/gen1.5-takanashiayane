@@ -1,0 +1,94 @@
+ul{
+    list-style:  none ;
+    padding-left: 0;
+}
+body{
+    width: 70%;
+    margin:0 auto;
+    max-width: 800px;
+}
+.list{
+    border: 1px solid #ebebeb;
+    padding: 13px;
+    margin: 10px auto;
+    font-weight: 600;
+    width : 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 2px rgba(0,0,0,.13) ; 
+    /* 影つける */
+    box-sizing: border-box;
+} 
+/* .li:hover{
+    background-color: #08B3F0;
+    color: #fff;
+} */
+.monndai{
+    font-size: 17px;
+    background: linear-gradient(transparent 70%,#f7ff4e 0);
+    display: inline-block;
+    line-height:20px; 
+    font-weight: 600;
+    
+}
+img{
+    display: block;
+    /* margin:  0 auto; */
+    width:100%;
+}
+.contenainer{
+    width : 80% ;
+    margin: 0 auto;
+    display:block;
+}
+.answer{
+    display: none;
+    border: 1px solid #ebebeb;
+    padding: 13px;
+    margin: 10px auto;
+    width : 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.wrong_answer{
+    display: none;
+    border: 1px solid #ebebeb;
+    padding: 13px;
+    margin: 10px auto;
+    width : 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+ 
+.seikai{
+    background-color: #08B3F0;
+    color: #fff;
+}
+
+
+.miss{
+    background-color: #FD6647;
+    color : #fff;
+}
+.correct_show {
+    font-weight: 600;
+    background: linear-gradient(transparent  80% , #08b3f0 0) ;
+    line-height: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.wrong_show {
+    font-weight: 600;
+    background: linear-gradient(transparent  80% , #fd6647 0) ;
+    line-height: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.answer_show {
+    font-size: 16px;
+    font-family: 'Hiragino Kaku Gothic ProN';
+}
+.cantclick {
+    display: inline-block;
+    pointer-events: none;
+}
+/*class名と{の間に半角スペース*/
