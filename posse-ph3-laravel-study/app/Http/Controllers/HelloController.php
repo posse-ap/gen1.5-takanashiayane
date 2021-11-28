@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 
 
@@ -32,7 +33,11 @@ use Illuminate\Http\Request;
 class HelloController extends Controller
 {
     public function index(){
-        return view('hello.hello');
+        return view('hello.hello',['msg'=>'']);
+    }
+
+    public function post(Request $request){
+        return view('hello.hello',['msg'=>$request->msg]);
     }
 }
 

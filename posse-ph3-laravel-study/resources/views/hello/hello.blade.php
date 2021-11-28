@@ -22,6 +22,15 @@
 
 <body>
     <h1>Hello</h1>
-
+    @if($msg!='')
+    <p>hi,{{$msg}}</p>
+    @else
+    <p>何か書いて</p>
+    @endif
+    <form method="POST" action="/hello">
+        @csrf
+        <input type="text" name="msg">
+        <input type="submit">
+    </form>
 </body>
 </html>
