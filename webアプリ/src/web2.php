@@ -17,8 +17,12 @@ $day_hour = $stmt->fetchAll();
 // };
 $day_hour_sum =array_column( $day_hour, "sum" ) ;
 
+$stmt = $db->query("SELECT DATE_FORMAT(date, '%Y%m%d') AS time,  SUM(hour) AS sum FROM logs WHERE DATE_FORMAT(date, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m') GROUP BY DATE_FORMAT(date, '%Y%m%d')");
+// $order_logs=array_multisort(array_map( "strtotime", $stmt ), SORT_ASC, $stmt) ;
+// print_r($day);
 
 $day=date('t');
+print_r($day);
 
 // $month_day[]
 // print_r($day_hour_sum);
@@ -174,7 +178,8 @@ $day=date('t');
     <script>
         // const hoge = JSON.parse('<?php echo $today_hour ?>');
         const day_hour_sum = JSON.parse('<?php echo json_encode($day_hour_sum) ?>');
-        const day = date('t');
+        const day = JSON.parse('<?php echo json_encode($day); ?>');
+        let orderlogs=JSON.parse('<?php echo json_encode($day_hour_sum) ?>')
     </script>
     <script src="web2.js"></script>
     <!-- <script src="chart.php" type="text/javascript"></script> -->

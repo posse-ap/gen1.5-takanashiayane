@@ -4,15 +4,16 @@
 // 棒グラフ
 
 
-
-
-
-
+let date_array = [];
+for(let i=1;i<=day;i++){
+    date_array.push(i);
+}
+console.log(date_array);
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['1日', '2日', '3日', '4日', '5日'],
+        labels: date_array,
         datasets: [
             {
                 label: 'C店 来客数', 
@@ -89,10 +90,10 @@ var myDoughnutChart = new Chart(ctx, {
             cutoutPercentage: 30
         }],
         labels: [
-            'Red',
-            'Yellow',
-            'Blue',
-            'みきはる'
+            'HTML',
+            'CSS',
+            'Javascript',
+            'PHP'
         ],
 
     },
@@ -145,17 +146,15 @@ var myDoughnutChart = new Chart(ctx, {
             backgroundColor: [
                 "#0740F5",
                 "#0572C3",
-                "#0AD2FF",
-                "#e6b422"
+                "#0AD2FF"
             ],
-            data: [45, 32, 18, 5],//グラフのデータ
+            data: [50, 32, 18],//グラフのデータ
             cutoutPercentage: 30
         }],
         labels: [
             'N予備',
             'ドットインストール',
-            'Blue',
-            'みきはる'
+            'POSSE課題'
         ],
 
     },
