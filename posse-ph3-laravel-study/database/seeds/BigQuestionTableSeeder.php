@@ -12,10 +12,10 @@ class BigQuestionTableSeeder extends Seeder
     public function run()
     {
         $big_quiestion = BigQuestion::create([
-            'title'     => '東京の難読地名クイズ',
+            'title'     => '東京',
         ]);
         $big_quiestion = BigQuestion::create([
-            'title'     => '広島の難読地名クイズ',
+            'title'     => '広島',
         ]);
     }
 }

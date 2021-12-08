@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +20,4 @@ Route::post('hello','HelloController@post');
 // Route::get('/hello/other','HelloController@other');
 
 
-Route::get('/quizy','QuizyController@index');
+Route::resource('quizy','QuizyController',['only' => ['show']]);

@@ -34,3 +34,70 @@ Time                 Id Command    Argument
 /usr/sbin/mysqld, Version: 8.0.27 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
 Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.27 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2021-11-29T02:40:25.461910-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    26
+# Query_time: 2.010390  Lock_time: 0.007542 Rows_sent: 0  Rows_examined: 0
+use laravel;
+SET timestamp=1638153623;
+drop table `big_questions`,`choices`,`failed_jobs`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-29T02:42:36.037889-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    28
+# Query_time: 1.368734  Lock_time: 0.044727 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638153754;
+drop table `big_questions`,`choices`,`failed_jobs`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-30T00:39:07.794021-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    31
+# Query_time: 2.106194  Lock_time: 0.005485 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638232745;
+create table `imges` (`id` bigint unsigned not null auto_increment primary key, `big_question_id` int not null, `question_id` int not null, `imge_path` int not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci';
+# Time: 2021-11-30T00:51:05.961916-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    36
+# Query_time: 2.679382  Lock_time: 0.037640 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638233463;
+drop table `big_questions`,`choices`,`failed_jobs`,`imges`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-30T00:55:58.200473-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    38
+# Query_time: 3.365000  Lock_time: 0.029081 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638233754;
+drop table `big_questions`,`choices`,`failed_jobs`,`images`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-30T01:02:43.888861-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    42
+# Query_time: 11.237930  Lock_time: 0.281960 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638234152;
+drop table `big_questions`,`choices`,`failed_jobs`,`images`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-30T01:02:47.396291-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    42
+# Query_time: 2.780846  Lock_time: 0.005090 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638234164;
+create table `migrations` (`id` int unsigned not null auto_increment primary key, `migration` varchar(255) not null, `batch` int not null) default character set utf8mb4 collate 'utf8mb4_unicode_ci';
+# Time: 2021-11-30T01:02:52.890777-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    42
+# Query_time: 3.138290  Lock_time: 0.579472 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638234169;
+create table `users` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `email_verified_at` timestamp null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci';
+# Time: 2021-11-30T01:02:58.011042-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    42
+# Query_time: 1.384168  Lock_time: 0.023367 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638234176;
+create table `failed_jobs` (`id` bigint unsigned not null auto_increment primary key, `connection` text not null, `queue` text not null, `payload` longtext not null, `exception` longtext not null, `failed_at` timestamp default CURRENT_TIMESTAMP not null) default character set utf8mb4 collate 'utf8mb4_unicode_ci';
+# Time: 2021-11-30T01:05:24.600202-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    44
+# Query_time: 1.929173  Lock_time: 0.067220 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638234322;
+drop table `big_questions`,`choices`,`failed_jobs`,`images`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-30T01:47:14.680577-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    60
+# Query_time: 1.153984  Lock_time: 0.003023 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638236833;
+drop table `big_questions`,`choices`,`failed_jobs`,`migrations`,`password_resets`,`users`;
+# Time: 2021-11-30T01:47:33.737468-00:00
+# User@Host: laravel[laravel] @  [192.168.0.3]  Id:    61
+# Query_time: 1.251255  Lock_time: 0.021756 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1638236852;
+drop table if exists `big_questions`;
+/usr/sbin/mysqld, Version: 8.0.27 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
