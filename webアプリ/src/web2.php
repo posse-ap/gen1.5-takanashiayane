@@ -17,12 +17,33 @@ $day_hour = $stmt->fetchAll();
 // };
 $day_hour_sum =array_column( $day_hour, "sum" ) ;
 
-$stmt = $db->query("SELECT DATE_FORMAT(date, '%Y%m%d') AS time,  SUM(hour) AS sum FROM logs WHERE DATE_FORMAT(date, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m') GROUP BY DATE_FORMAT(date, '%Y%m%d')");
+
+$stmt = $db->query("SELECT DATE_FORMAT(date, '%d') AS day,  SUM(hour) AS sumhour FROM logs WHERE DATE_FORMAT(date, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m') GROUP BY DATE_FORMAT(date, '%d')");
 // $order_logs=array_multisort(array_map( "strtotime", $stmt ), SORT_ASC, $stmt) ;
 // print_r($day);
+$date_hour = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// echo "<pre>";
+var_dump($date_hour);
+// echo "</pre>";
+
+
+// var_dump($date_hour["day"]);
+// echo "<br>";
+// $merge_date_hour = call_user_func_array("array_merge", $date_hour); 
+// echo "<br>";
+// var_dump($merge_date_hour);
+// echo "<br>";
+// var_dump($merge_date_hour["day"]);
+// var_dump($merge_date_hour["sumhour"]);
+var_dump($date_hour[0]["day"]);
+var_dump($date_hour[1]["day"]);
+// echo array_sum(array_column($date_hour, 'day'));
+// 15,8
+// var_dump($date_hour);
+
 
 $day=date('t');
-print_r($day);
+// print_r($day);
 
 // $month_day[]
 // print_r($day_hour_sum);
@@ -177,9 +198,10 @@ print_r($day);
     </footer>
     <script>
         // const hoge = JSON.parse('<?php echo $today_hour ?>');
-        const day_hour_sum = JSON.parse('<?php echo json_encode($day_hour_sum) ?>');
-        const day = JSON.parse('<?php echo json_encode($day); ?>');
-        let orderlogs=JSON.parse('<?php echo json_encode($day_hour_sum) ?>')
+        // const day_hour_sum = JSON.parse('<?php echo json_encode($day_hour_sum) ?>');
+        const date_hour = JSON.parse('<?php echo json_encode($data_hour) ?>');
+        // const day = JSON.parse('<?php echo json_encode($day); ?>');
+        // let orderlogs=JSON.parse('<?php echo json_encode($day_hour_sum) ?>')
     </script>
     <script src="web2.js"></script>
     <!-- <script src="chart.php" type="text/javascript"></script> -->

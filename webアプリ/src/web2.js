@@ -3,12 +3,17 @@
 
 // 棒グラフ
 
-
+console.log(day_hour_sum);
 let date_array = [];
 for(let i=1;i<=day;i++){
     date_array.push(i);
 }
-console.log(date_array);
+// console.log(date_array);
+var day_array=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+
+day_arr.splice(day-1, 0, 'AAA', 'BBB', 'CCC');
+
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: 'bar',
@@ -17,7 +22,7 @@ var myBarChart = new Chart(ctx, {
         datasets: [
             {
                 label: 'C店 来客数', 
-                data: day_hour_sum,
+                data: ,
                 backgroundColor: "rgba(130,201,169,0.5)"
             }
         ]
