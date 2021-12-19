@@ -13,9 +13,10 @@
     <div class="contenainer">
         
         <div>
+
             @foreach($choice_numbers as $choice_number)
             <h3 class="monndai">{{$choice_number->question_id}}.この地名はなんて読む？</h3>
-            @endforeach
+        
             
 
             {{-- @foreach($bigQuestions as $bigQuestion)
@@ -38,8 +39,8 @@
                 @foreach($choices as $choice)
                 <li id='choice1_1' class="list" onclick="check(1,1)">{{$choice->choice}}</li>
                 @endforeach
-                <li id='choice1_2' class="list" onclick="check(1,2)">こうわ</li>
-                <li id='choice1_1' class="list" onclick="check(1,3)"> たかなわ</li>
+                {{-- <li id='choice1_2' class="list" onclick="check(1,2)">こうわ</li>
+                <li id='choice1_1' class="list" onclick="check(1,3)"> たかなわ</li> --}}
 
             </ul>
             <div id="answer" class="answer">
@@ -50,6 +51,8 @@
                 <div class="wrong_show">不正解！</div>
                 <p class="answer_show">正解は「たかなわ」です!</p>
             </div>
+
+            @endforeach
         </div>
 
         <!-- <h3 class='monndai'>2.この地名はなんて読む？</h3>
