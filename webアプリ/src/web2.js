@@ -4,15 +4,15 @@
 // 棒グラフ
 
 console.log(day_hour_sum);
-let date_array = [];
-for(let i=1;i<=day;i++){
-    date_array.push(i);
-}
-// console.log(date_array);
+// let date_array = [];
+// for(let i=1;i<=day;i++){
+//     date_array.push(i);
+// }
+console.log(date_array);
 var day_array=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 
-day_arr.splice(day-1, 0, 'AAA', 'BBB', 'CCC');
+// day_arr.splice(day-1, 0, 'AAA', 'BBB', 'CCC');
 
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
@@ -22,7 +22,7 @@ var myBarChart = new Chart(ctx, {
         datasets: [
             {
                 label: 'C店 来客数', 
-                data: ,
+                data: [],
                 backgroundColor: "rgba(130,201,169,0.5)"
             }
         ]
@@ -37,7 +37,7 @@ var myBarChart = new Chart(ctx, {
                 ticks: {
                     suggestedMax: 120,
                     suggestedMin: 0,
-                    stepSize: 10,
+                    stepSize: 10
                     // callback: function (value, index, values) {
                     //     return value + '人'
                     // }
