@@ -3,9 +3,7 @@
 /* ヘッダー */
 
 header {
-    /* box-sizing: border-box; */
     height: 64px;
-    /* width:100%; */
     background-color: white;
     align-items: center;
     display: flex;

@@ -50,7 +50,6 @@ var myBarChart = new Chart(ctx, {
 // ドーナツグラフ 学習言語
 Chart.plugins.register({
     afterDatasetsDraw: function (chart, easing) {
-        // To only draw at the end of animation, check for easing === 1
         var ctx = chart.ctx;
 
         chart.data.datasets.forEach(function (dataset, i) {

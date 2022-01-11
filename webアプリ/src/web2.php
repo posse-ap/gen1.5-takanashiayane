@@ -24,8 +24,6 @@ $stmt = $db->query("SELECT DATE_FORMAT(date, '%d') AS day,  SUM(hour) AS sumhour
 $date_hour = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // echo "<pre>";
 var_dump($date_hour);
-// echo "</pre>";
-
 
 // var_dump($date_hour["day"]);
 // echo "<br>";
@@ -204,8 +202,6 @@ $day=date('t');
         // let orderlogs=JSON.parse('<?php echo json_encode($day_hour_sum) ?>')
     </script>
     <script src="web2.js"></script>
-    <!-- <script src="chart.php" type="text/javascript"></script> -->
-
 </body>
 
 </html>
