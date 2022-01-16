@@ -14,8 +14,8 @@
         
         <div>
 
-            @foreach($choice_numbers as $choice_number)
-            <h3 class="monndai">{{$choice_number->question_id}}.この地名はなんて読む？</h3>
+            @foreach($bigQuestion->questions as $question)
+            <h3 class="monndai">{{$question->id}}.この地名はなんて読む？</h3>
         
             
 
@@ -32,12 +32,14 @@
             @endforeach --}}
 
             <div class="img">
-                <img src="https://d1khcm40x1j0f.cloudfront.net/quiz/34d20397a2a506fe2c1ee636dc011a07.png" alt='高輪の写真'>
+                <img src="{{ asset('/img/' . $bigQuestion->id .'_'. $question->id .'.png') }}"  alt='高輪の写真'>
+                {{-- <img src="{{ asset('/img/1_1.png') }}"  alt='高輪の写真'> --}}
             </div>
 
             <ul>
-                @foreach($choices as $choice)
-                <li id='choice1_1' class="list" onclick="check(1,1)">{{$choice->choice}}</li>
+                
+                @foreach($question->choices as $choice)
+            <li id="'choice'.$question->id . '_'.$loop->index" class="list" onclick="check({{ $question->id}},{{ $loop->index }})">{{ $choice->choice }}</li>
                 @endforeach
                 {{-- <li id='choice1_2' class="list" onclick="check(1,2)">こうわ</li>
                 <li id='choice1_1' class="list" onclick="check(1,3)"> たかなわ</li> --}}
@@ -45,7 +47,7 @@
             </ul>
             <div id="answer" class="answer">
                 <div class="correct_show">正解！</div>
-                <p class="answer_show">正解は「たかなわ」です!</p>
+                <p class="answer_show">正解は「{{ $correct_choices[$question->id -1]->choice}}」です!</p>
             </div>
             <div id="wrong_answer" class="wrong_answer">
                 <div class="wrong_show">不正解！</div>

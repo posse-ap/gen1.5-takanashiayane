@@ -15,14 +15,18 @@ class QuizyController extends Controller
         // $bigQuestion = BigQuestion::all();
         //var_dumpと一緒dump$die
         // $choices= Choice::where('big_question_id','=',$id)->gruopBy('question_id')->get('question_id');
-        $choices= Choice::where('big_question_id','=',$id)->get();
+        // $choices= Choice::where('big_question_id','=',$id)->get();
 
         // dd($choices);
-        $choice_numbers= Choice::where('big_question_id','=',$id)->where('valid','=','1')->get();
+
+        $correct_choices= Choice::where('valid','=','1')->get();
+        // dd($correct_choices);
+
         // dd(compact('bigQuestion','choices'));
+
         
         
-        return view('quizy',compact('bigQuestion','choices','choice_numbers'));
+        return view('quizy',compact('bigQuestion','correct_choices'));
         // return view([‘id’ => $id, ‘bigQuestions’ => $bigQuestions, ‘choices’ => $choices]);
         
 

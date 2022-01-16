@@ -1,13 +1,13 @@
 function check(question_number,choice){
-    var clicked = document.getElementById(`choice${question_number}_${choice}`);
+    var clicked = document.getElementById(`choice${question_number}_${choice+1}`);
     clicked_json =clicked.textContent;
 
-    var judge = document.getElementById(`choice${question_number}_1`);
+    var judge = document.getElementById(`choice${question_number}_0`);
     judge_json =judge.textContent;
 
-    let correct_choice=document.getElementById("choice"+question_number+"_1");
-    let miss_choice1=document.getElementById("choice"+question_number+"_2");
-    let miss_choice2=document.getElementById("choice"+question_number+"_3");
+    let correct_choice=document.getElementById("choice"+question_number+"_0");
+    let miss_choice1=document.getElementById("choice"+question_number+"_1");
+    let miss_choice2=document.getElementById("choice"+question_number+"_2");
     var answers = document.getElementsByClassName( 'answer' );
     answers = Array.from( answers) ;
     var wrong_answers = document.getElementsByClassName( 'wrong_answer' );
@@ -18,9 +18,7 @@ function check(question_number,choice){
         answers.forEach(answer => {
             answer.style.display = "block";
         });
-        
-        
-        
+            
     }else{
         miss_choice1.classList.add("miss");
         wrong_answers.forEach(wrong_answer => {

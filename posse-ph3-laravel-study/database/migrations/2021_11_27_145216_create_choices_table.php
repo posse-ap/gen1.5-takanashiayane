@@ -15,7 +15,6 @@ class CreateChoicesTable extends Migration
     {
         Schema::create('choices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('big_question_id');
             $table->integer('question_id');
             $table->string('choice', 255);
             $table->integer('valid');
