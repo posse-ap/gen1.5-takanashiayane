@@ -58,7 +58,7 @@ img{
     cursor: pointer;
     box-sizing: border-box;
 }
- 
+
 .seikai{
     background-color: #08B3F0;
     color: #fff;
@@ -90,5 +90,26 @@ img{
 .cantclick {
     display: inline-block;
     pointer-events: none;
+}
+.button {
+    display: block;
+    color: white;
+    border-radius: 30px;
+    background: linear-gradient(-90deg, #0AD2FF, #0572C2);
+    border: none;
+    font-size: 0.9em;
+    padding-right: 45px;
+    padding-left: 45px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: auto;
+    margin: 10px 20px 10px auto;
+    float: right;
+    text-align: right;
+    box-sizing: border-box;
+}
+.edit{
+    color:white;
+    text-decoration:none;
 }
 /*class名と{の間に半角スペース*/

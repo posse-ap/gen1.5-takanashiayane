@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Question;
+use App\Models\Question;
 class QuestionSeeder extends Seeder
 {
     /**
@@ -11,14 +11,20 @@ class QuestionSeeder extends Seeder
      */
     public function run()
     {
-        $questions = Question::create([
-            'big_question_id' => 1,
+        Question::create([
+            'quiz_id' => 1,
+            'img_path' => '1_1.png',
+            'statement' => 'この地名はなんて読む？',
         ]);
-        $questions = Question::create([
-            'big_question_id' => 1,
+        Question::create([
+            'quiz_id' => 1,
+            'img_path' => '1_2.png',
+            'statement' => 'この地名はなんて読む？',
         ]);
-        $questions = Question::create([
-            'big_question_id' => 2,
+        Question::create([
+            'quiz_id' => 2,
+            'img_path' => '2_1.png',
+            'statement' => 'この地名はなんて読む？',
         ]);
     }
 }

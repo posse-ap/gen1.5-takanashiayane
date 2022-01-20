@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,9 @@ Route::post('hello','HelloController@post');
 // Route::get('/hello/other','HelloController@other');
 
 
-Route::resource('quizy','QuizyController',['only' => ['show']]);
+// Route::resource('quizy','QuizyController',['only' => ['show']]);
+Route::resource('quiz','QuizController',['only' => ['show','index']]);
+Route::resource('admin','AdminController',['only' => ['show','index','edit','update']]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

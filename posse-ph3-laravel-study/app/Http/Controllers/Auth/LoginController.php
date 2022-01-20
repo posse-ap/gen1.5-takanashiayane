@@ -28,6 +28,8 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected $maxAttempts = 2;     // ログイン試行回数（回）
+    protected $decayMinutes = 3;   // ログインロックタイム（分）
     /**
      * Create a new controller instance.
      *
@@ -37,8 +39,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function redirectPath()
-    {
-        return '/quizy/1';
-    }
+    // public function redirectPath()
+    // {
+    //     return '/quiz';
+    // }
 }
