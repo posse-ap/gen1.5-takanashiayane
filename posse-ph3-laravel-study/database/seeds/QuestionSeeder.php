@@ -17,5 +17,8 @@ class QuestionSeeder extends Seeder
         $questions = Question::create([
             'big_question_id' => 1,
         ]);
+        $questions = Question::create([
+            'big_question_id' => 2,
+        ]);
     }
 }

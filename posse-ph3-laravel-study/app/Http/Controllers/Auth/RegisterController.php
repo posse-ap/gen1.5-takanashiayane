@@ -70,4 +70,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    public function redirectPath()
+    {
+        return '/quizy/1';
+        //例）return 'costs/index';
+    }
 }

@@ -4,55 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$bigQuestion->title}}の難読地名クイズ</title>
+    <title>{{ $bigQuestion->title }}の難読地名クイズ</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/quizy.css') }}">
 </head>
 
 <body>
     <div class="contenainer">
-        
+
         <div>
 
-            @foreach($bigQuestion->questions as $question)
-            <h3 class="monndai">{{$question->id}}.この地名はなんて読む？</h3>
-        
-            
-
-            {{-- @foreach($bigQuestions as $bigQuestion)
+            @foreach ($bigQuestion->questions as $question)
+                <h3 class="monndai">{{ $loop->index + 1 }}.この地名はなんて読む？</h3>
+            <!-- 
+                {{-- @foreach ($bigQuestions as $bigQuestion)
             <p>{{$bigQuestion->id}}の難読地名クイズ</p>
             @endforeach --}}
-
-            
-            {{-- @foreach ($choices as $choice)
+                {{-- @foreach ($choices as $choice)
                 <p>{{ $choice->id }}</p>
             @endforeach
             @foreach ($bigQuestions as $bigQuestion)
                 <p>{{ $bigQuestion->id }}</p>
-            @endforeach --}}
+            @endforeach --}} -->
 
-            <div class="img">
-                <img src="{{ asset('/img/' . $bigQuestion->id .'_'. $question->id .'.png') }}"  alt='高輪の写真'>
-                {{-- <img src="{{ asset('/img/1_1.png') }}"  alt='高輪の写真'> --}}
-            </div>
-
-            <ul>
+                <div class="img">
+                    <img src="{{ asset('/img/' . $bigQuestion->id . '_' . $loop->iteration . '.png') }}" alt='高輪の写真'>
+                </div>
+                <ul>
+                    @foreach ($question->choices as $choice)
+                        <li id="choice{{ $loop->parent->iteration }}_{{ $loop->index }}_{{ $choice->valid }}" class="list list{{ $question->id }}" onclick="check({{ $loop->parent->iteration }},{{ $loop->index }},{{ $choice->valid }})">
+                        {{  $choice->choice}}
+                    </li>
+                    @endforeach
+                </ul>
                 
-                @foreach($question->choices as $choice)
-            <li id="'choice'.$question->id . '_'.$loop->index" class="list" onclick="check({{ $question->id}},{{ $loop->index }})">{{ $choice->choice }}</li>
-                @endforeach
-                {{-- <li id='choice1_2' class="list" onclick="check(1,2)">こうわ</li>
-                <li id='choice1_1' class="list" onclick="check(1,3)"> たかなわ</li> --}}
-
-            </ul>
-            <div id="answer" class="answer">
-                <div class="correct_show">正解！</div>
-                <p class="answer_show">正解は「{{ $correct_choices[$question->id -1]->choice}}」です!</p>
-            </div>
-            <div id="wrong_answer" class="wrong_answer">
-                <div class="wrong_show">不正解！</div>
-                <p class="answer_show">正解は「たかなわ」です!</p>
-            </div>
+                <div id="answer{{ $loop->iteration }}" class="answer">
+                    <div class="correct_show">正解！</div>
+                    <p class="answer_show">正解は「{{ $correct_choices[$question->id -1]->choice}}」です!</p>
+                </div>
+            
+                <div id="wrong_answer{{ $loop->iteration }}" class="wrong_answer">
+                    <div class="wrong_show">不正解！</div>
+                    <p class="answer_show">正解は「{{  $correct_choices[$question->id -1]->choice }}」です!</p>
+                </div>
 
             @endforeach
         </div>

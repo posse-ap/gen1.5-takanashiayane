@@ -21,3 +21,6 @@ Route::post('hello','HelloController@post');
 
 
 Route::resource('quizy','QuizyController',['only' => ['show']]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
