@@ -16,7 +16,7 @@
 
                 <div class="img">
                     {{-- <img src="{{ asset('/img/' . $bigQuestion->id . '_' . $loop->iteration . '.png') }}" alt='高輪の写真'> --}}
-                    <img src="{{ asset('/img/' .$question->img_path) }}" alt='高輪の写真'>
+                    <img src="{{ asset('storage/img/' .$question->img_path) }}" alt='高輪の写真'>
                 </div>
                 <ul>
                     @foreach ($question->choices as $choice)

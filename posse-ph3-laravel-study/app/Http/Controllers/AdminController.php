@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Quiz;
+use \App\Models\Question;
 use \App\Models\Choice;
+
 class AdminController extends Controller
 {
     /**
@@ -14,9 +16,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $quiz=Quiz::All();
+        $quiz = Quiz::All();
         // return view('top',compact('quiz'));
-        return view('quiz_edit',compact('quiz'));
+        return view('quiz_edit', compact('quiz'));
     }
 
     /**
@@ -48,9 +50,9 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $quiz = Quiz::where('id','=', $id)->first();
+        $quiz = Quiz::where('id', '=', $id)->first();
         // dd($quiz);
-        return view('questions_list',compact('quiz'));
+        return view('questions_list', compact('quiz'));
     }
 
     /**
@@ -61,9 +63,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $quiz = Quiz::where('id','=', $id)->first();
+        $quiz = Quiz::where('id', '=', $id)->first();
         // dd($quiz);
-        return view('questions_edit',compact('quiz'));
+        return view('questions_edit', compact('quiz'));
     }
 
     /**
@@ -75,7 +77,32 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request['question_statement1']);
+        Quiz::where('id', $id)->update([
+            'title' => $request['quiz_title']
+        ]);
+        // ('からむ名',検索したい値])
+        // アップロードされたファイルの取得
+        $question_statement_id = $request['question_statement_id'];
+        
+        foreach ($question_statement_id as $key => $value) {
+            if ($request['question_img' . $value]) {
+                $file_name = 'question_img' . $value.'.png';
+                $request->file('question_img'. $value)->storeAs('public/img',$file_name);
+
+                Question::where('id', (int)$value)->update([
+                    'statement' => $request['question_statement'][$key],
+                    'img_path' => $file_name,
+                    
+                    ]);
+                    //画像を保存する
+            } else {
+                Question::where('id', (int)$value)->update([
+                    'statement' => $request['question_statement'][$key]
+                ]);
+            }
+        };
+        return redirect(route('admin.show', ['admin' => $id]));
     }
 
     /**
