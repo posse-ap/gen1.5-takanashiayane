@@ -34,9 +34,12 @@
                 </div>
                 <label class="col-md-2" for="title">選択肢 ※赤い枠のところに正解の選択肢を入力してね</label>
                 <div id='target{{ $loop->iteration }}'>
+                    <input type="hidden" class="form-control" name="question_number" value={{ $loop->iteration}}>
                     @foreach ($question->choices as $choice)
                         <input type="text" class="{{ $loop->index == 0 ? 'correct_choice_input' : 'b' }}"
                             name="choice{{ $loop->parent->iteration }}_{{ $loop->iteration }}" value="{{ $choice->name }}">
+                        <input type="hidden" class="form-control" name="choice_number{{ $loop->parent->iteration }}" value={{ $loop->iteration}}>
+                        <input type="hidden" class="form-control" name="choice_id[]" value={{ $choice->id}}>
                     @endforeach
                     <input type="button" id="btn{{ $loop->iteration }}" onclick=button() value="入力欄追加">
                 </div>

@@ -10,10 +10,11 @@
 </head>
 <body>
     <button class="button"><a href="{{ route('admin.edit',['admin'=>$quiz->id]) }}" class="edit">編集</a></button>
+    <button class="button"><a href="{{ route('admin.create',['quiz_id'=>$quiz->id]) }}" class="edit">新規作成</a></button>
+    <button class="button"><a href="{{ route('admin.destroy_show',['quiz_id'=>$quiz->id]) }}" class="edit">削除</a></button>
     <h1>{{ $quiz->title }}の難読地名クイズ</h1>
     @foreach ($quiz->questions as $question)
     <h2 class="monndai">{{ $loop->index + 1 }}.{{ $question->statement }}</h2>
-
                 <div class="img">
                     {{-- <img src="{{ asset('/img/' . $bigQuestion->id . '_' . $loop->iteration . '.png') }}" alt='高輪の写真'> --}}
                     <img src="{{ asset('storage/img/' .$question->img_path) }}" alt='高輪の写真'>
